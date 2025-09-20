@@ -3,6 +3,7 @@ export default function Lab1() {
   return (
     <div id="wd-lab1">
       <h2>Lab 1</h2>
+      <p id="wd-name">Elaine Mo, Section CS4550.11597.202610</p>
       <h3>HTML Examples</h3>
       <div id="wd-h-tag">
         <h4>Heading Tags</h4>
@@ -316,12 +317,12 @@ export default function Lab1() {
           <p>
             Please
             <a
-              href="https://github.com/EMo5510?tab=repositories"
+              href="https://github.com/EMo5510/kambaz-next-js.git"
               id="wd-github"
             >
               click here
             </a>
-            to get github
+            to get github source code repo
           </p>
           <br />
         </form>
