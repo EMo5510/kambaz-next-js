@@ -3,8 +3,9 @@ import CourseNavigation from "./Navigation";
 export default async function CoursesLayout({
   children,
   params,
-}: Readonly<{ children: ReactNode; params: Promise<{ id: string }> }>) {
-  const { cid } = await params;
+}: Readonly<{ children: ReactNode; params: { id: string } }>) {
+  //const { cid } = await params;
+  const { id: cid } = params;
   //<h2>Courses {cid}</h2>
   return (
     <div id="wd-courses">
