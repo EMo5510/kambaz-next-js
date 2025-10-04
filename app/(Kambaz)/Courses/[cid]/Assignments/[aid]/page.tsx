@@ -1,5 +1,73 @@
+import { Col, FormControl, FormLabel, FormSelect, Row } from "react-bootstrap";
+
 export default function AssignmentEditor() {
   return (
+    <div id="wd-assignments-editor">
+      <h3>Assignment Name</h3>
+      <Row>
+        <FormControl
+          id="wd-assignment-name"
+          placeholder="A1"
+          className="mb-2"
+        />
+      </Row>
+      <Row>
+        <FormControl as="textarea" style={{ height: "100px" }} />
+        The assignment is available online Submit a link to the landing page of
+      </Row>
+      <Row>
+        <FormLabel column sm={2}>
+          {" "}
+          Points{" "}
+        </FormLabel>
+        <Col sm={10}>
+          <FormControl
+            id="wd-assignment-points"
+            placeholder="100"
+            className="mb-4"
+          />
+        </Col>
+      </Row>
+      <Row className="mb-3" controlId="textarea2">
+        <FormLabel column sm={2}>
+          {" "}
+          Bio{" "}
+        </FormLabel>
+        <Col sm={10}>
+          <FormControl as="textarea" style={{ height: "100px" }} />
+        </Col>
+      </Row>
+      <Row>
+        <FormLabel column sm={2}>
+          Assignment Group
+        </FormLabel>
+        <Col sm={10}>
+          <FormSelect>
+            <option value="ASSIGNMENTS" defaultChecked>
+              ASSIGNMENTS
+            </option>
+            <option value="QUIZZES">QUIZZES</option>
+            <option value="EXAMS">EXAMS</option>
+            <option value="PROJECT">PROJECT</option>
+          </FormSelect>
+        </Col>
+      </Row>
+      <Row>
+        <FormLabel column sm={2}>
+          {" "}
+          Display Grade as{" "}
+        </FormLabel>
+        <Col sm={10}>
+          <FormSelect>
+            <option value="PERCENTAGE" defaultChecked>
+              Percentage
+            </option>
+            <option value="TOTAL">Total points</option>
+          </FormSelect>
+        </Col>
+      </Row>
+    </div>
+    /*
     <div id="wd-assignments-editor">
       <label htmlFor="wd-name">Assignment Name</label>
       <input id="wd-name" defaultValue="A1 - ENV + HTML" />
@@ -23,7 +91,7 @@ export default function AssignmentEditor() {
             <label htmlFor="wd-group">Assignment Group</label>
           </td>
           <td>
-            {/*<input id="wd-group" defaultValue={100} />*/}
+            {<input id="wd-group" defaultValue={100} />}
             <select id="wd-group">
               <option value="ASSIGNMENTS">ASSIGNMENTS</option>
               <option value="QUIZZES">QUIZZES</option>
@@ -124,6 +192,6 @@ export default function AssignmentEditor() {
       </table>
       <button>Cancel</button>
       <button>Save</button>
-    </div>
+    </div>*/
   );
 }
