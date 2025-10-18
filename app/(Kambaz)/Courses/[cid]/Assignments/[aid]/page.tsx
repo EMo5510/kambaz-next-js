@@ -1,13 +1,19 @@
 import { Col, FormControl, FormLabel, FormSelect, Row } from "react-bootstrap";
+import * as db from "../../../../Database";
 
-export default function AssignmentEditor() {
+export default function AssignmentEditor({ params }: { params: { cid: string; aid: string } }) {
+  const { cid, aid } = params;
+  const assignments = db.assignments;
+  const assignment = assignments.find(
+    (a) => a._id === aid && a.course === cid
+  );
   return (
     <div id="wd-assignments-editor">
       <h3>Assignment Name</h3>
       <Row>
         <FormControl
           id="wd-assignment-name"
-          placeholder="A1"
+          placeholder={assignment?.title || "Assignment Title"}
           className="mb-2"
         />
       </Row>

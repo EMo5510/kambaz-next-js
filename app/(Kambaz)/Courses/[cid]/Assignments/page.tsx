@@ -1,9 +1,18 @@
+"use client"
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import AssignmentControls from "./AssignmentControls";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { BsGripVertical } from "react-icons/bs";
 import LessonControlButtons from "../Modules/LessonControlButtons";
+import * as db from "../../../Database";
+
 export default function Assignments() {
+  const { cid } = useParams();
+  const assignments = db.assignments;
+  const courseAssignments = assignments.filter(
+    (assignment) => assignment.course === cid
+  );
   return (
     <div id="wd-assignments">
       <AssignmentControls />
@@ -11,6 +20,23 @@ export default function Assignments() {
       <br />
       <br />
       <br />
+      <h3 id="wd-assignments-title">
+        ASSIGNMENTS 40% of Total <button>+</button>{" "}
+      </h3>
+      <ul className="list-group">
+        {courseAssignments.map((assignment) => (
+          <li key={assignment._id} className="list-group-item">
+            <Link href={`/Courses/${cid}/Assignments/${assignment._id}`}>
+              {assignment.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+/*
+</div>
       <h3 id="wd-assignments-title">
         ASSIGNMENTS 40% of Total <button>+</button>{" "}
       </h3>
@@ -87,5 +113,4 @@ export default function Assignments() {
         </ListGroupItem>
       </ListGroup>
     </div>
-  );
-}
+*/

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import KambazNavigation from "./Account/Navigation";
+//import KambazNavigation from "./Account/Navigation";
+import KambazNavigation from "./Navigation";
 import "./styles.css";
 export default function KambazLayout({
   children,
