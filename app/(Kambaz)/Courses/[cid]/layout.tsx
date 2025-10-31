@@ -4,15 +4,10 @@ import { FaAlignJustify } from "react-icons/fa";
 import { courses } from "../../Database";
 import Breadcrumb from "./Breadcrumb";
 
-interface CourseLayoutProps {
-  children : ReactNode;
-  params: Promise<{cid : string}>;
-}
-
 export default async function CoursesLayout({
   children,
   params,
-}: Readonly<{ children: ReactNode; params: { cid: string }}>) {
+}: Readonly<{ children: ReactNode; params: Promise<{ cid: string }>;}>) {
   const { cid } = await params;
   // {course?.name}
   //const { cid } = params;
