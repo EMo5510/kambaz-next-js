@@ -22,6 +22,9 @@ export interface Course {
   startDate: string;
   endDate: string;
   image?: string;
+  description: string;
+  department: string;
+  credits: number;
 }
 
 export interface Assignment {
