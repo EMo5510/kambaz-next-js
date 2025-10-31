@@ -4,13 +4,18 @@ import { FaAlignJustify } from "react-icons/fa";
 import { courses } from "../../Database";
 import Breadcrumb from "./Breadcrumb";
 
-export default function CoursesLayout({
+interface CourseLayoutProps {
+  children : ReactNode;
+  params: Promise<{cid : string}>;
+}
+
+export default async function CoursesLayout({
   children,
   params,
 }: Readonly<{ children: ReactNode; params: { cid: string }}>) {
-  //const { cid } = await params;
+  const { cid } = await params;
   // {course?.name}
-  const { cid } = params;
+  //const { cid } = params;
   const course = courses.find((course) => course._id === cid);
   return (
     <div id="wd-courses">
