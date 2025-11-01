@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import AssignmentControls from "./AssignmentControls";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { BsGripVertical } from "react-icons/bs";
-import LessonControlButtons from "../Modules/LessonControlButtons";
+import LessonControlButtons from "../Modules/ModuleControlButtons";
 import * as db from "../../../Database";
 
 export default function Assignments() {

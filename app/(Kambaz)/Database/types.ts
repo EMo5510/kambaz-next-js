@@ -40,6 +40,11 @@ export interface User {
   role: string;
   firstName?: string;
   lastName?: string;
+  email: string;
+  dob: string;
+  loginId: string;
+  lastActivity: string;
+  totalActivity: string;
 }
 
 export interface Enrollment {
