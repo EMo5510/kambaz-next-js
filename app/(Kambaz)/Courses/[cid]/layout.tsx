@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "next/navigation";
 import { RootState } from "../../store";
 import { FaAlignJustify } from "react-icons/fa";
-import { courses } from "../../Database";
+//import { courses } from "../../Database";
 import { Course } from "../../Database/types";
 import Breadcrumb from "./Breadcrumb";
 
@@ -21,13 +21,13 @@ export default function CoursesLayout({ children }: { children: ReactNode }) {
     <div id="wd-courses">
       <h2 className="text-danger">
         <FaAlignJustify className="me-4 fs-4 mb-1" />
-        {course?.name}
+        
         <Breadcrumb course={course} />
       </h2>
       <hr />
       <div className="d-flex">
         <div className="d-none d-md-block">
-          <CourseNavigation cid={""} />{" "}
+          <CourseNavigation cid={cid as string} />{" "}
         </div>
         <div className="flex-fill"></div>
         {children}{" "}

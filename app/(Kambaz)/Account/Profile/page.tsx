@@ -1,11 +1,14 @@
+"use client";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentUser } from "../reducer";
 import { RootState } from "../../store";
 import { Button, FormControl } from "react-bootstrap";
 import { redirect } from "next/navigation";
+import { User } from "../../Database/types";
+
 export default function Profile() {
- const [profile, setProfile] = useState<any>({});
+ const [profile, setProfile] = useState<User | null>(null);
  const dispatch = useDispatch();
  const { currentUser } = useSelector((state: RootState) => state.accountReducer);
  const fetchProfile = () => {
